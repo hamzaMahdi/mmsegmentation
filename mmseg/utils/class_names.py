@@ -488,6 +488,7 @@ def hsidrive_palette():
             [255, 166, 0], [0, 204, 204]]
 
 
+
 dataset_aliases = {
     'cityscapes': ['cityscapes'],
     'ade': ['ade', 'ade20k'],
@@ -510,9 +511,15 @@ dataset_aliases = {
     'hsidrive': [
         'hsidrive', 'HSIDrive', 'HSI-Drive', 'hsidrive20', 'HSIDrive20',
         'HSI-Drive20'
-    ]
+    ],
+    'RadisDataset': ['RadisDataset', 'radis']
 }
 
+def RadisDataset_classes():
+    return ['Background', 'Common Femoral Artery', 'Superficial Femoral Artery', 'Deep Femoral Artery', 'Femoral Vein', 'Needle Outside Vessel', 'Needle Inside Vessel', 'Femoral Head', 'Bifurcation']
+
+def RadisDataset_palette():
+    return [[0,0,0], [144, 19, 254], [0,128,0], [255,0,0], [0,0,255], [255,255,0], [255,165,0], [255,0,255], [128,0,128]]
 
 def get_classes(dataset):
     """Get class names of a dataset."""
@@ -524,6 +531,8 @@ def get_classes(dataset):
     if is_str(dataset):
         if dataset in alias2name:
             labels = eval(alias2name[dataset] + '_classes()')
+        elif dataset == 'RadisDataset':
+            labels = RadisDataset_classes()
         else:
             raise ValueError(f'Unrecognized dataset: {dataset}')
     else:
@@ -541,6 +550,8 @@ def get_palette(dataset):
     if is_str(dataset):
         if dataset in alias2name:
             labels = eval(alias2name[dataset] + '_palette()')
+        elif dataset == 'RadisDataset':
+            labels = RadisDataset_palette()
         else:
             raise ValueError(f'Unrecognized dataset: {dataset}')
     else:

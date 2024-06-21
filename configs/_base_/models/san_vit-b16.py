@@ -125,9 +125,6 @@ model = dict(
                           loss_name='loss_mask_ce',
                           loss_weight=5.0),
                      dict(type='DiceLoss',
-                          ignore_index=None,
-                          naive_dice=True,
-                          eps=1,
                           loss_name='loss_mask_dice',
                           loss_weight=5.0)
                      ]),
