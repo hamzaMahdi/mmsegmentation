@@ -109,12 +109,12 @@ model = dict(
                     dict(
                         type='CrossEntropyLossCost',
                         weight=5.0,
-                        use_sigmoid=True),
-                    dict(
-                        type='DiceCost',
-                        weight=5.0,
-                        pred_act=True,
-                        eps=1.0)
+                        use_sigmoid=True)#,
+                    # dict(
+                    #     type='DiceCost',
+                    #     weight=5.0,
+                    #     pred_act=True,
+                    #     eps=1.0)
                 ])),
         loss_decode=[dict(type='CrossEntropyLoss',
                           loss_name='loss_cls_ce',
@@ -123,10 +123,10 @@ model = dict(
                      dict(type='CrossEntropyLoss',
                           use_sigmoid=True,
                           loss_name='loss_mask_ce',
-                          loss_weight=5.0),
-                     dict(type='DiceLoss',
-                          loss_name='loss_mask_dice',
-                          loss_weight=5.0)
+                          loss_weight=5.0)#,
+                    #  dict(type='DiceLoss',
+                    #       loss_name='loss_mask_dice',
+                    #       loss_weight=5.0)
                      ]),
 
     # model training and testing settings

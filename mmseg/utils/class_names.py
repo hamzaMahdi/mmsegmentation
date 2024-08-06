@@ -519,7 +519,7 @@ def RadisDataset_classes():
     return ['Background', 'Common Femoral Artery', 'Superficial Femoral Artery', 'Deep Femoral Artery', 'Femoral Vein', 'Needle Outside Vessel', 'Needle Inside Vessel', 'Femoral Head', 'Bifurcation']
 
 def RadisDataset_palette():
-    return [[0,0,0], [144, 19, 254], [0,128,0], [255,0,0], [0,0,255], [255,255,0], [255,165,0], [255,0,255], [128,0,128]]
+    return [ [0,0,0], [144, 19, 254], [0,128,0], [255,0,0], [0,0,255], [255,255,0], [255,165,0], [255,0,255], [128,0,128]]
 
 def get_classes(dataset):
     """Get class names of a dataset."""
